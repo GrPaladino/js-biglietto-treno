@@ -19,16 +19,16 @@ const totalCost = userKm * costKm;
 tripCost = "";
 
 // Calcolo sconto
-const under18 = (totalCost / 100) * 20;
-const over65 = (totalCost / 100) * 40;
+let under18 = (totalCost / 100) * 20;
+let over65 = (totalCost / 100) * 40;
 
 // prezzo scontato
 if (userAge < 18) {
   tripCost = totalCost - under18;
-  userCost.innerText = tripCost;
+  userCost.innerText = tripCost.toFixed(2);
 } else if (userAge > 18) {
   tripCost = totalCost - over65;
-  userCost.innerText = tripCost;
+  userCost.innerText = tripCost.toFixed(2);
 }
 
 console.log(tripCost.toFixed(2));
